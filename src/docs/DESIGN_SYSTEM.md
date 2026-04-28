@@ -1,6 +1,6 @@
 # Design system — iCollected.it
 
-**Status:** Stub — token files under `/src/design` do not exist yet; fill as the Design System agent implements [`/checklist.md`](/checklist.md) **§5**.
+**Status:** Stub — starter token [`src/design/colors.ts`](/src/design/colors.ts) exists; expand per [`/checklist.md`](/checklist.md) **§5** (typography, spacing, themes, etc.).
 
 **Owner:** Design System agent ([`/agents/DesignSystem.md`](/agents/DesignSystem.md)). UX tone and hierarchy: [`/agents/UIUX.md`](/agents/UIUX.md).
 

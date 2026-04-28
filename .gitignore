@@ -6,18 +6,40 @@ node_modules/
 dist/
 web-build/
 
-# Env (keep example only if you add one)
-.env
-.env.*
-!.env.example
-
-# OS / editor
-.DS_Store
-*.swp
-.idea/
-
-# Native builds (when present)
+# Native (Expo prebuild / local)
+ios/
+android/
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
 ios/Pods/
 android/.gradle/
 android/build/
 android/app/build/
+
+# Metro
+.metro-health-check*
+
+# Env (keep example only)
+.env
+.env.*
+!.env.example
+.env*.local
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# OS / editor
+.DS_Store
+*.pem
+*.swp
+.idea/
+
+# TypeScript
+*.tsbuildinfo

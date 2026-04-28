@@ -2,12 +2,12 @@
 
 ## Status
 
-Phase: Foundation
+Phase: Project Setup (Expo + TypeScript scaffold landed; native run checks remain)
 
 Current priority:
 
-- establish source-of-truth docs
-- create modular Expo React Native + TypeScript foundation
+- confirm iOS / Android / web runs locally
+- keep modular `/src` boundaries as features land
 - protect the product direction
 - prepare future scanner, recognition, verification, achievements, and paywall architecture
 
@@ -52,34 +52,34 @@ No major work should happen outside this checklist.
 
 ## 2. Project Setup
 
-- [ ] Initialize Expo React Native project
-- [ ] Configure TypeScript
-- [ ] Install Firebase SDK
-- [ ] Install navigation dependencies
-- [ ] Install Expo development build support
+- [x] Initialize Expo React Native project
+- [x] Configure TypeScript
+- [x] Install Firebase SDK
+- [x] Install navigation dependencies
+- [x] Install Expo development build support
 - [ ] Confirm project runs on iOS simulator/device
 - [ ] Confirm project runs on Android simulator/device
-- [ ] Confirm web build path is understood
-- [ ] Configure environment variable strategy
-- [ ] Confirm no secrets are committed
+- [x] Confirm web build path is understood (`npm run web`, Metro in `app.json` `expo.web`)
+- [x] Configure environment variable strategy (`EXPO_PUBLIC_*`, `.env.example`, `src/config/env.config.ts`)
+- [x] Confirm no secrets are committed (`.gitignore`; no keys in repo)
 
 ---
 
 ## 3. Core Architecture
 
-- [ ] Create `/src/app`
-- [ ] Create `/src/app/app.map.ts`
-- [ ] Create `/src/app/navigation.registry.ts`
-- [ ] Create `/src/app/providers.tsx`
-- [ ] Create `/src/app/platform.registry.ts`
-- [ ] Create `/src/config`
-- [ ] Create `/src/design`
-- [ ] Create `/src/features`
-- [ ] Create `/src/shared`
-- [ ] Create `/src/firebase`
+- [x] Create `/src/app`
+- [x] Create `/src/app/app.map.ts`
+- [x] Create `/src/app/navigation.registry.ts` (implemented as `navigation.registry.tsx`)
+- [x] Create `/src/app/providers.tsx`
+- [x] Create `/src/app/platform.registry.ts`
+- [x] Create `/src/config`
+- [x] Create `/src/design`
+- [x] Create `/src/features`
+- [x] Create `/src/shared`
+- [x] Create `/src/firebase`
 - [x] Create `/src/docs`
-- [ ] Define import alias strategy
-- [ ] Document architecture in `/src/docs/ARCHITECTURE.md`
+- [x] Define import alias strategy (`@/*` → `./src/*` in `tsconfig.json` + `babel.config.js`)
+- [x] Document architecture in `/src/docs/ARCHITECTURE.md`
 
 ---
 

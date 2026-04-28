@@ -2,7 +2,7 @@
 
 **Repository:** [github.com/MystrSOne/iCollected.it](https://github.com/MystrSOne/iCollected.it)
 
-Mobile-first social platform for collectors. This repository currently holds **product and engineering source-of-truth docs** plus **Cursor agent playbooks**; the Expo app scaffold is tracked in `checklist.md` (Phase: Foundation).
+Mobile-first social platform for collectors. The repo includes **Expo + TypeScript** app code under `src/`, **product/agent docs** at the root, and **`checklist.md`** for phased work (see current **Phase** there).
 
 ## Where to start
 
@@ -27,3 +27,15 @@ Mobile-first social platform for collectors. This repository currently holds **p
 - `src/docs/DATA_MODEL.md` — entities, ownership, indexes (stubs; grow with code)  
 - `src/docs/DESIGN_SYSTEM.md` — visual principles and token plan  
 - `src/docs/UX_WIREFRAMES.md` — screen inventory and UX intent  
+
+## Development
+
+```bash
+npm install
+npm run typecheck   # TypeScript
+npm start           # Expo dev server (Expo Go or dev client)
+npm run web         # Web — Metro bundler (see app.json expo.web)
+```
+
+- **Env:** copy [`.env.example`](.env.example) to `.env` and set `EXPO_PUBLIC_*` only (no secrets).
+- **Native dev builds:** after `npx expo prebuild`, open `ios/` / `android/` (ignored in git until you choose to commit them). Use EAS or local builds per Expo docs.
