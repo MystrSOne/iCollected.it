@@ -20,3 +20,10 @@ Mobile-first social platform for collectors. This repository currently holds **p
 - `agents/README.md` — lane routing and handoffs between expert roles  
 - `agents/*.md` — per-role checklists and constraints  
 - `.cursor/rules/icollected-agents.mdc` — workspace reminder for agents  
+
+### Implementation docs (`src/docs/`)
+
+- `src/docs/ARCHITECTURE.md` — stack, folders, modularity, open decisions  
+- `src/docs/DATA_MODEL.md` — entities, ownership, indexes (stubs; grow with code)  
+- `src/docs/DESIGN_SYSTEM.md` — visual principles and token plan  
+- `src/docs/UX_WIREFRAMES.md` — screen inventory and UX intent  

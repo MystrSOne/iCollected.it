@@ -42,11 +42,11 @@ No major work should happen outside this checklist.
 - [x] Add `/AGENTS.md` (Cursor/agent entry pointer to `Agent.md`)
 - [x] Add `/.cursorignore` (exclude deps/builds from indexing when present)
 - [x] Add `/README.md` (human + agent entry, links to truth files)
-- [ ] Create `/src/docs/ARCHITECTURE.md`
-- [ ] Create `/src/docs/DATA_MODEL.md`
-- [ ] Create `/src/docs/DESIGN_SYSTEM.md`
-- [ ] Create `/src/docs/UX_WIREFRAMES.md`
-- [ ] Confirm Cursor reads these docs before implementation tasks
+- [x] Create `/src/docs/ARCHITECTURE.md`
+- [x] Create `/src/docs/DATA_MODEL.md`
+- [x] Create `/src/docs/DESIGN_SYSTEM.md`
+- [x] Create `/src/docs/UX_WIREFRAMES.md`
+- [x] Confirm Cursor reads these docs before implementation tasks (process: `AGENTS.md` + `Agent.md` + `.cursor/rules/icollected-agents.mdc`; task-area: read relevant `/src/docs/*.md` once `src/` exists)
 
 ---
 
@@ -77,7 +77,7 @@ No major work should happen outside this checklist.
 - [ ] Create `/src/features`
 - [ ] Create `/src/shared`
 - [ ] Create `/src/firebase`
-- [ ] Create `/src/docs`
+- [x] Create `/src/docs`
 - [ ] Define import alias strategy
 - [ ] Document architecture in `/src/docs/ARCHITECTURE.md`
 

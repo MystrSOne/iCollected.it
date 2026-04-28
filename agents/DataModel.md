@@ -46,7 +46,7 @@ Cross-check: **§25** Performance (queryability), **§24** Security (ownership f
 
 ## Done means
 
-- Types + short **field-level ownership** (who writes, who reads) documented in `/src/docs/DATA_MODEL.md` when that file exists.
+- Types + short **field-level ownership** (who writes, who reads) documented in [`/src/docs/DATA_MODEL.md`](/src/docs/DATA_MODEL.md) (stub; extend as types and Firestore paths land).
 - **Counter / denormalization** strategy stated where counts or feeds appear.
 - **Index notes** for any non-trivial query; flag expensive patterns for **Performance**.
 - Relevant **§22** and feature § tasks updated in `checklist.md`.

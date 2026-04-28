@@ -43,7 +43,7 @@ Heavy collaboration: **§24** Security (rules authoring often lands here or in S
 
 ## Before you start
 
-- Obtain or confirm **Data Model** contracts (`/src/docs/DATA_MODEL.md` when present, or explicit types from **DataModel** lane).
+- Obtain or confirm **Data Model** contracts in [`/src/docs/DATA_MODEL.md`](/src/docs/DATA_MODEL.md) (stub; extend with concrete shapes), or explicit types from the **DataModel** lane until the doc is exhaustive.
 - List **read/write paths** per user story; sketch **indexes** before coding queries.
 - Check **Security** expectations for public vs private reads and **achievement** writes (not client-writable).
 

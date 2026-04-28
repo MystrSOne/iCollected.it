@@ -9,6 +9,7 @@
 3. `/Agent.md` — operating rules, modularity, bans  
 4. `/agents/README.md` — primary vs supporting lane, checklist § index, handoffs  
 5. `/agents/<Role>.md` — only the roles that apply to this task  
+6. When working under `src/`, read the relevant **`/src/docs/*.md`** for that area (architecture, data, design, UX), in addition to the files above.
 
 Do not override `/prompt.md`. Do not leave `/checklist.md` stale after finishing work.
 

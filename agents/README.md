@@ -96,7 +96,7 @@ Use these **section numbers** when pointing agents at work (mirrors `## N.` head
 Order is logical, not strict time order.
 
 1. **ProductArchitect** — scope and sequencing; flags checklist §31 risks.  
-2. **DataModel** — contracts in `/src/docs/DATA_MODEL.md` (when it exists), types, relationships, counter/feed notes.  
+2. **DataModel** — contracts in `/src/docs/DATA_MODEL.md` (stub; extend with implementation), types, relationships, counter/feed notes.  
 3. **BackendFirebase** — services, paths, indexes, emulator; implements **against** Data Model contracts.  
 4. **Security** — rules and enforcement review; may **block** release until Data Model + Backend alignment is clear.  
 5. **UIUX** + **DesignSystem** — flows and tokens; UIUX leads copy/structure, DesignSystem leads measurable visuals.  
