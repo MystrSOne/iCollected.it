@@ -55,8 +55,9 @@ Summarized from [`/Agent.md`](/Agent.md):
 | Command | Purpose |
 |--------|---------|
 | `npm start` | Expo dev server |
+| `npm run start:go` | Metro + QR for **Expo Go** on any device (no adb required) |
 | `npm run ios` / `npm run android` | Dev client + simulator (requires dev build installed — see below) |
-| `npm run ios:go` / `npm run android:go` | **Expo Go** (quick iteration; no custom native modules) |
+| `npm run ios:go` / `npm run android:go` | Open **Expo Go** on iOS Simulator / **Android emulator or USB device** (`android:go` needs adb + a running device) |
 | `npm run ios:build` / `npm run android:build` | `expo run:*` — builds and installs a **development client** locally |
 | `npm run web` | Web — Metro (`react-dom` + `react-native-web` required) |
 | `npm run typecheck` | `tsc --noEmit` |

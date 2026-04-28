@@ -34,8 +34,9 @@ Mobile-first social platform for collectors. The repo includes **Expo + TypeScri
 npm install
 npm run typecheck   # TypeScript
 npm start           # Expo dev server
-npm run ios:go      # iOS simulator with Expo Go (quickest)
-npm run android:go  # Android with Expo Go
+npm run start:go    # Metro + QR — scan with Expo Go on **iOS or Android** (no adb/emulator required)
+npm run ios:go      # iOS simulator + Expo Go (needs Simulator)
+npm run android:go  # Android emulator/device + Expo Go (**needs** running AVD or USB device + adb)
 npm run ios:build   # Build & install dev client (Xcode); use when you need expo-dev-client
 npm run web         # Web — Metro
 ```
@@ -44,5 +45,6 @@ npm run web         # Web — Metro
 - **Why `src/shell` not `src/app`:** Expo treats a folder named `app` as **Expo Router**; this app uses React Navigation in `src/shell/`.
 - **Metro “Cannot find module babel-preset-expo”:** `babel-preset-expo` must be a direct dependency (installed via `npx expo install babel-preset-expo`).
 - **iOS “no development build”:** use `npm run ios:go` or run `npm run ios:build` once to install the dev client (`it.icollected.app`).
+- **Android “No device found”:** `npm run android:go` only works if an **emulator is running** or a **phone is connected with USB debugging**. For a **physical Android phone** without adb, use `npm run start:go` and scan the QR code in **Expo Go** (same flow as iPhone).
 - **Android SDK / `adb`:** install Android Studio, then `export ANDROID_HOME=$HOME/Library/Android/sdk` (macOS default).
 - **Native dev builds:** `expo run:ios` / `expo run:android` generate `ios/` / `android/` (gitignored here unless you commit them).
