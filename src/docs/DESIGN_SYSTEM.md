@@ -20,7 +20,7 @@
 
 | File | Role |
 |------|------|
-| [`colors.ts`](/src/design/colors.ts) | `colors` (light), `colorsDark` — surface, text, border, accent |
+| [`colors.ts`](/src/design/colors.ts) | `colors` (light), `colorsDark` — surface, text, border, accent, `danger` |
 | [`typography.ts`](/src/design/typography.ts) | `title`, `titleLarge`, `body`, `bodySmall`, `caption` |
 | [`spacing.ts`](/src/design/spacing.ts) | `xs`–`xxl` scale |
 | [`radius.ts`](/src/design/radius.ts) | `sm`, `md`, `lg`, `full` |
@@ -46,6 +46,23 @@ Roles are semantic (`surface`, `textPrimary`, `accent`) rather than literal colo
 
 - **Light:** default `tokens` / `lightTheme`.
 - **Dark:** `darkTheme` mirrors the same role keys with dark values — keep keys in sync when adding roles.
+
+## Shared components
+
+Primitives live in [`src/shared/components`](/src/shared/components) and are re-exported from [`index.ts`](/src/shared/components/index.ts). **Prefer these over raw React Native** (`Text`, ad-hoc `TextInput` styling, undifferentiated `View` cards) in feature screens so spacing, type, and color stay on the token system.
+
+| Export | Role |
+|--------|------|
+| `AppScreen` | Screen wrapper / safe area |
+| `AppText` | Token typography + muted |
+| `AppButton` | Primary / ghost actions |
+| `AppInput` | Labeled `TextInput` with error border (`tokens.colors.danger`) |
+| `AppCard` | Elevated surface + optional `onPress` |
+| `AppImage` | `Image` with default `resizeMode="cover"` and optional `rounded`; upgrade to `expo-image` later if you need caching / blur placeholders |
+| `AppDivider` | Hairline rule using `borderSubtle` |
+| `AppHeader` | In-screen row chrome (not the stack header) |
+| `EmptyState` | Centered title + message + optional action |
+| `LoadingState` | Centered `ActivityIndicator` + optional message |
 
 ## Accessibility (next)
 

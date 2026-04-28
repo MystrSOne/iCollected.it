@@ -136,16 +136,16 @@ No major work should happen outside this checklist.
 - [x] Create `/src/shared/components/AppScreen.tsx`
 - [x] Create `/src/shared/components/AppText.tsx`
 - [x] Create `/src/shared/components/AppButton.tsx`
-- [ ] Create `/src/shared/components/AppInput.tsx`
-- [ ] Create `/src/shared/components/AppCard.tsx`
-- [ ] Create `/src/shared/components/AppImage.tsx`
-- [ ] Create `/src/shared/components/AppDivider.tsx`
-- [ ] Create `/src/shared/components/AppHeader.tsx`
-- [ ] Create `/src/shared/components/EmptyState.tsx`
-- [ ] Create `/src/shared/components/LoadingState.tsx`
+- [x] Create `/src/shared/components/AppInput.tsx`
+- [x] Create `/src/shared/components/AppCard.tsx`
+- [x] Create `/src/shared/components/AppImage.tsx`
+- [x] Create `/src/shared/components/AppDivider.tsx`
+- [x] Create `/src/shared/components/AppHeader.tsx`
+- [x] Create `/src/shared/components/EmptyState.tsx`
+- [x] Create `/src/shared/components/LoadingState.tsx`
 - [x] Create shared component barrel exports (`src/shared/components/index.ts`)
-- [ ] Ensure all shared components use design tokens (AppScreen, AppText, AppButton done; add others with §6)
-- [ ] Ensure shared components are platform-safe (slice above uses SafeAreaView / Pressable; verify rest when added)
+- [x] Ensure all shared components use design tokens (all §6 primitives import `tokens` from `@/design` only)
+- [x] Ensure shared components are platform-safe (cross-platform RN APIs only — `SafeAreaView`, `Pressable`, `TextInput`, `Image`, `ActivityIndicator`; no native-only APIs without guards)
 
 ---
 

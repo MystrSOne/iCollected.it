@@ -12,6 +12,8 @@ export const colors = {
   accentMuted: '#4A7A6A',
   /** Text / icons on top of `accent` fills */
   textOnAccent: '#FAF8F5',
+  /** Validation / destructive emphasis (borders, icons) — keep subdued per brand */
+  danger: '#9B4540',
   overlay: 'rgba(26, 26, 26, 0.45)',
 } as const;
 
@@ -24,6 +26,7 @@ export const colorsDark = {
   accent: '#6BA88E',
   accentMuted: '#558A74',
   textOnAccent: '#121210',
+  danger: '#E08980',
   overlay: 'rgba(0, 0, 0, 0.55)',
 } as const;
 
