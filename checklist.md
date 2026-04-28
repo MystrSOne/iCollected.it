@@ -2,11 +2,11 @@
 
 ## Status
 
-Phase: Project Setup (Expo + TypeScript scaffold landed; native run checks remain)
+Phase: Project Setup (Expo + TypeScript scaffold; iOS + Android simulators verified)
 
 Current priority:
 
-- confirm iOS / Android / web runs locally
+- confirm web runs locally (`npm run web`) if not already
 - keep modular `/src` boundaries as features land
 - protect the product direction
 - prepare future scanner, recognition, verification, achievements, and paywall architecture
@@ -57,8 +57,8 @@ No major work should happen outside this checklist.
 - [x] Install Firebase SDK
 - [x] Install navigation dependencies
 - [x] Install Expo development build support
-- [ ] Confirm project runs on iOS simulator/device
-- [ ] Confirm project runs on Android simulator/device
+- [x] Confirm project runs on iOS simulator/device
+- [x] Confirm project runs on Android simulator/device
 - [x] Confirm web build path is understood (`npm run web`, Metro in `app.json` `expo.web`)
 - [x] Configure environment variable strategy (`EXPO_PUBLIC_*`, `.env.example`, `src/config/env.config.ts`)
 - [x] Confirm no secrets are committed (`.gitignore`; no keys in repo)
