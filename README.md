@@ -42,6 +42,7 @@ npm run web         # Web — Metro
 
 - **Env:** copy [`.env.example`](.env.example) to `.env` and set `EXPO_PUBLIC_*` only (no secrets).
 - **Why `src/shell` not `src/app`:** Expo treats a folder named `app` as **Expo Router**; this app uses React Navigation in `src/shell/`.
+- **Metro “Cannot find module babel-preset-expo”:** `babel-preset-expo` must be a direct dependency (installed via `npx expo install babel-preset-expo`).
 - **iOS “no development build”:** use `npm run ios:go` or run `npm run ios:build` once to install the dev client (`it.icollected.app`).
 - **Android SDK / `adb`:** install Android Studio, then `export ANDROID_HOME=$HOME/Library/Android/sdk` (macOS default).
 - **Native dev builds:** `expo run:ios` / `expo run:android` generate `ios/` / `android/` (gitignored here unless you commit them).
