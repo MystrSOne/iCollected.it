@@ -7,6 +7,10 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "android:go": "expo start --android --go",
+    "ios:go": "expo start --ios --go",
+    "android:build": "expo run:android",
+    "ios:build": "expo run:ios",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit"
   },
@@ -18,9 +22,11 @@
     "expo-status-bar": "~3.0.9",
     "firebase": "^11.6.0",
     "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-native": "0.81.5",
     "react-native-safe-area-context": "^5.4.0",
-    "react-native-screens": "^4.10.0"
+    "react-native-screens": "^4.10.0",
+    "react-native-web": "^0.21.0"
   },
   "devDependencies": {
     "@types/react": "~19.1.0",

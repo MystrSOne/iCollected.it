@@ -2,7 +2,7 @@
  * Single map of major systems — extend as modules land (checklist §4).
  */
 export const appMap = {
-  root: 'src/app',
+  root: 'src/shell',
   config: 'src/config',
   design: 'src/design',
   features: 'src/features',

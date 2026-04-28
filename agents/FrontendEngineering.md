@@ -29,7 +29,7 @@ Build the modular Expo React Native app without coupling screens, services, or f
 
 ## Responsible Files
 
-- `/src/app`
+- `/src/shell` (app entry, providers, navigation — not `/src/app`; Expo reserves `app` for Expo Router)
 - `/src/features`
 - `/src/shared`
 - `/src/config`
@@ -62,7 +62,7 @@ Touches: **§7** Firebase Foundation (only wiring; services live per `BackendFir
 ## Example tasks (this agent)
 
 - “Implement collection grid using `CollectionService` + tokens.”
-- “Wire `app.map.ts` and navigation registry for profile stack.”
+- “Wire `src/shell/app.map.ts` and navigation registry for profile stack.”
 - “Add item flow accepts `ItemDraft` from scanner module.”
 
 ## Anti-patterns

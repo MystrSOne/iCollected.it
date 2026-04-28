@@ -67,11 +67,11 @@ No major work should happen outside this checklist.
 
 ## 3. Core Architecture
 
-- [x] Create `/src/app`
-- [x] Create `/src/app/app.map.ts`
-- [x] Create `/src/app/navigation.registry.ts` (implemented as `navigation.registry.tsx`)
-- [x] Create `/src/app/providers.tsx`
-- [x] Create `/src/app/platform.registry.ts`
+- [x] Create `/src/shell` (entry/providers/navigation — not named `app`; Expo reserves `**/app` for Expo Router)
+- [x] Create `/src/shell/app.map.ts`
+- [x] Create `/src/shell/navigation.registry.ts` (implemented as `navigation.registry.tsx`)
+- [x] Create `/src/shell/providers.tsx`
+- [x] Create `/src/shell/platform.registry.ts`
 - [x] Create `/src/config`
 - [x] Create `/src/design`
 - [x] Create `/src/features`

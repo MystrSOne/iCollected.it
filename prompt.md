@@ -231,7 +231,7 @@ For **lane routing** (which expert role is primary), **supporting roles**, the *
 
 ```txt
 /src
-  /app
+  /shell
   /config
   /design
   /features
@@ -239,6 +239,8 @@ For **lane routing** (which expert role is primary), **supporting roles**, the *
   /firebase
   /docs
 ```
+
+Use **`/src/shell`** for the app entry, providers, and navigation registry — not **`/src/app`**, because Expo treats a directory named `app` as **Expo Router** routes.
 
 ## Required Source-of-Truth Files
 
@@ -264,7 +266,7 @@ Before any meaningful coding task, read these files, then **`/agents/README.md`*
 Create and maintain:
 
 ```txt
-/src/app/app.map.ts
+/src/shell/app.map.ts
 ```
 
 This file must define where major systems live:

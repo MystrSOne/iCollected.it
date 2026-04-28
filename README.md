@@ -33,9 +33,15 @@ Mobile-first social platform for collectors. The repo includes **Expo + TypeScri
 ```bash
 npm install
 npm run typecheck   # TypeScript
-npm start           # Expo dev server (Expo Go or dev client)
-npm run web         # Web — Metro bundler (see app.json expo.web)
+npm start           # Expo dev server
+npm run ios:go      # iOS simulator with Expo Go (quickest)
+npm run android:go  # Android with Expo Go
+npm run ios:build   # Build & install dev client (Xcode); use when you need expo-dev-client
+npm run web         # Web — Metro
 ```
 
 - **Env:** copy [`.env.example`](.env.example) to `.env` and set `EXPO_PUBLIC_*` only (no secrets).
-- **Native dev builds:** after `npx expo prebuild`, open `ios/` / `android/` (ignored in git until you choose to commit them). Use EAS or local builds per Expo docs.
+- **Why `src/shell` not `src/app`:** Expo treats a folder named `app` as **Expo Router**; this app uses React Navigation in `src/shell/`.
+- **iOS “no development build”:** use `npm run ios:go` or run `npm run ios:build` once to install the dev client (`it.icollected.app`).
+- **Android SDK / `adb`:** install Android Studio, then `export ANDROID_HOME=$HOME/Library/Android/sdk` (macOS default).
+- **Native dev builds:** `expo run:ios` / `expo run:android` generate `ios/` / `android/` (gitignored here unless you commit them).
