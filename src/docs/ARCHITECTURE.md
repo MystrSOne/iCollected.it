@@ -23,12 +23,16 @@ Aligned with [`/prompt.md`](/prompt.md) **Required Folder Structure** (`/src/she
 /src
   /shell      — App.tsx, providers, navigation.registry.tsx, app.map.ts, platform.registry.ts
   /config     — env.config.ts (EXPO_PUBLIC_* pattern)
-  /design     — tokens (colors.ts starter)
-  /features   — feature modules (empty)
-  /shared     — shared UI (empty)
+  /design     — design tokens (see `src/design/*`)
+  /features   — one folder per feature (see `appMap.features.*`)
+  /shared     — shared UI ([`src/shared/components`](/src/shared/components) — `AppScreen`, `AppText`, `AppButton`, barrel `index.ts`)
   /firebase   — Firebase bootstrap (placeholder)
   /docs       — architecture, data model, design, UX wireframes
 ```
+
+## App map (canonical paths)
+
+All feature and infrastructure roots are defined in [`src/shell/app.map.ts`](/src/shell/app.map.ts) (`appMap`). Add new systems there first, then create matching folders under `src/features/` or elsewhere—do not scatter magic path strings.
 
 ## Import aliases
 
@@ -40,7 +44,7 @@ Aligned with [`/prompt.md`](/prompt.md) **Required Folder Structure** (`/src/she
 Summarized from [`/Agent.md`](/Agent.md):
 
 - Screens stay thin; **no Firebase calls in screens** — use feature services under `/src/features/*/services` and `/src/firebase`.
-- **Design:** all styling from [`/src/design`](/src/design) tokens (starter in `colors.ts`).
+- **Design:** all styling from [`/src/design`](/src/design) (`tokens`, themes, typography, spacing).
 - **Navigation:** [`src/shell/navigation.registry.tsx`](/src/shell/navigation.registry.tsx) + [`src/shell/app.map.ts`](/src/shell/app.map.ts) for system locations.
 - **Scanner:** `ScannerInput → ScannerEngine → ScannerResult → ItemDraft`; Add Item accepts `ItemDraft` only.
 - **Paid capabilities:** `Feature UI → Entitlement check → Capability service → Result` — no scattered `isPremium` in screens.

@@ -1,7 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { colors } from '@/design';
+import { tokens } from '@/design';
+import { AppScreen, AppText } from '@/shared/components';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -11,10 +12,14 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function HomeScreen() {
   return (
-    <View style={styles.center}>
-      <Text style={styles.title}>iCollected.it</Text>
-      <Text style={styles.sub}>Foundation scaffold — see checklist.md</Text>
-    </View>
+    <AppScreen>
+      <View style={styles.center}>
+        <AppText variant="title">iCollected.it</AppText>
+        <AppText variant="bodySmall" muted style={styles.sub}>
+          Foundation scaffold — see checklist.md
+        </AppText>
+      </View>
+    </AppScreen>
   );
 }
 
@@ -23,25 +28,28 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.surface,
-    padding: 24,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: '600',
-    color: colors.textPrimary,
-    marginBottom: 8,
+    padding: tokens.spacing.lg,
   },
   sub: {
-    fontSize: 15,
-    color: colors.textMuted,
     textAlign: 'center',
+    marginTop: tokens.spacing.sm,
   },
 });
 
+const stackScreenOptions = {
+  headerTitle: 'iCollected.it' as const,
+  headerStyle: { backgroundColor: tokens.colors.surface },
+  headerTintColor: tokens.colors.textPrimary,
+  headerTitleStyle: {
+    ...tokens.typography.body,
+    fontWeight: '600' as const,
+    color: tokens.colors.textPrimary,
+  },
+};
+
 export function RootStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerTitle: 'iCollected.it' }}>
+    <Stack.Navigator screenOptions={stackScreenOptions}>
       <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );

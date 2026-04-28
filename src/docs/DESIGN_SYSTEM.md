@@ -1,46 +1,59 @@
 # Design system — iCollected.it
 
-**Status:** Stub — starter token [`src/design/colors.ts`](/src/design/colors.ts) exists; expand per [`/checklist.md`](/checklist.md) **§5** (typography, spacing, themes, etc.).
+**Status:** Living — token files implemented under [`src/design/`](/src/design/); extend with ThemeProvider and a11y audits as UI grows.
 
-**Owner:** Design System agent ([`/agents/DesignSystem.md`](/agents/DesignSystem.md)). UX tone and hierarchy: [`/agents/UIUX.md`](/agents/UIUX.md).
+**Owner:** Design System agent ([`/agents/DesignSystem.md`](/agents/DesignSystem.md)). UX tone: [`/agents/UIUX.md`](/agents/UIUX.md).
 
-**Related truth:** [`/prompt.md`](/prompt.md) **Visual Direction** and **Brand Language**; [`/Agent.md`](/Agent.md) (no hardcoded colors, spacing, typography in UI).
+**Related truth:** [`/prompt.md`](/prompt.md) **Visual Direction** and **Brand Language**; [`/Agent.md`](/Agent.md) (no ad-hoc colors, spacing, or typography in feature UI).
 
 ---
 
 ## Principles
 
-From product spec — UI should feel like:
+- Quiet, premium, **warm neutrals**, strong typography, minimal chrome.
+- Feels like a **personal archive** — not a dashboard, marketplace, or trading UI.
+- All feature screens consume **`tokens`** (or `lightTheme` / `darkTheme`) from [`src/design`](/src/design) — not raw hex in `src/features`.
 
-- a notebook, museum tag, personal archive, collection label — **not** a trading floor, dashboard, or marketplace.
+---
 
-Directional keywords: quiet, premium, warm neutrals, strong typography, minimal chrome, subtle recognition moments.
+## File layout (implemented)
 
-## Token layout (planned)
+| File | Role |
+|------|------|
+| [`colors.ts`](/src/design/colors.ts) | `colors` (light), `colorsDark` — surface, text, border, accent |
+| [`typography.ts`](/src/design/typography.ts) | `title`, `titleLarge`, `body`, `bodySmall`, `caption` |
+| [`spacing.ts`](/src/design/spacing.ts) | `xs`–`xxl` scale |
+| [`radius.ts`](/src/design/radius.ts) | `sm`, `md`, `lg`, `full` |
+| [`shadows.ts`](/src/design/shadows.ts) | `none`, `card` (uses semantic shadow from text token opacity) |
+| [`themes.ts`](/src/design/themes.ts) | `lightTheme`, `darkTheme` — composed objects |
+| [`tokens.ts`](/src/design/tokens.ts) | `tokens` = default **light** bundle for imports |
+| [`index.ts`](/src/design/index.ts) | Barrel exports |
 
-When implemented, centralize in:
+## Usage
 
-- `/src/design/colors.ts`
-- `/src/design/typography.ts`
-- `/src/design/spacing.ts`
-- `/src/design/radius.ts`
-- `/src/design/shadows.ts`
-- `/src/design/themes.ts`
-- `/src/design/tokens.ts`
-- `/src/design/index.ts`
+```ts
+import { tokens, typography, colors } from '@/design';
+```
 
-## Naming conventions (TBD)
+- Prefer **`tokens`** in `StyleSheet.create` so spacing, type, and colors stay aligned.
+- **`darkTheme`** is available for a future `ThemeProvider` + `useColorScheme` hook; screens are not yet forced dark.
 
-- Prefer **semantic** token names (`surfaceArchive`, `textInk`) over raw color names in components.
-- Document **light** theme first; keep **dark** slots ready per checklist **§5**.
+## Semantic naming
 
-## Accessibility (TBD)
+Roles are semantic (`surface`, `textPrimary`, `accent`) rather than literal color names (`green500`). Add new roles in `colors.ts` + both light/dark maps when needed.
 
-- Contrast targets for text and interactive elements.
-- Focus and hit-area guidance for shared primitives.
+## Light / dark
+
+- **Light:** default `tokens` / `lightTheme`.
+- **Dark:** `darkTheme` mirrors the same role keys with dark values — keep keys in sync when adding roles.
+
+## Accessibility (next)
+
+- Verify contrast for `textPrimary` / `textMuted` on `surface` (WCAG AA) when type scales finalize.
+- Shared primitives (`AppText`, `AppButton`, …) should expose minimum hit areas (44pt) where interactive.
 
 ## Exceptions
 
-If a ship-blocking exception needs a one-off value, document it here with **owner**, **reason**, and **deadline** to tokenize.
+Document one-offs here with owner, reason, and deadline to tokenize.
 
-Update this file whenever the visual system or token contract changes.
+Update this file when tokens or usage rules change.

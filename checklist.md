@@ -2,14 +2,14 @@
 
 ## Status
 
-Phase: Project Setup (Expo + TypeScript scaffold; iOS + Android simulators verified)
+Phase: App map and design foundation (§4–§5 done; shared primitives started in §6)
 
 Current priority:
 
-- confirm web runs locally (`npm run web`) if not already
+- finish remaining shared components (§6) before auth UI
 - keep modular `/src` boundaries as features land
 - protect the product direction
-- prepare future scanner, recognition, verification, achievements, and paywall architecture
+- next: Firebase foundation (§7) when Firebase project is ready
 
 Rule:
 
@@ -85,57 +85,57 @@ No major work should happen outside this checklist.
 
 ## 4. App Map
 
-- [ ] Define auth module location
-- [ ] Define onboarding module location
-- [ ] Define profile module location
-- [ ] Define collections module location
-- [ ] Define items module location
-- [ ] Define scanner module location
-- [ ] Define recognition module location
-- [ ] Define verification module location
-- [ ] Define achievements module location
-- [ ] Define entitlements module location
-- [ ] Define subscriptions module location
-- [ ] Define feed module location
-- [ ] Define social module location
-- [ ] Define explore module location
-- [ ] Define shared components location
-- [ ] Define Firebase services location
-- [ ] Define design system location
+- [x] Define auth module location (`appMap.features.auth` → `src/features/auth`)
+- [x] Define onboarding module location (`appMap.features.onboarding`)
+- [x] Define profile module location (`appMap.features.profile`)
+- [x] Define collections module location (`appMap.features.collections`)
+- [x] Define items module location (`appMap.features.items`)
+- [x] Define scanner module location (`appMap.features.scanner`)
+- [x] Define recognition module location (`appMap.features.recognition`)
+- [x] Define verification module location (`appMap.features.verification`)
+- [x] Define achievements module location (`appMap.features.achievements`)
+- [x] Define entitlements module location (`appMap.features.entitlements`)
+- [x] Define subscriptions module location (`appMap.features.subscriptions`)
+- [x] Define feed module location (`appMap.features.feed`)
+- [x] Define social module location (`appMap.features.social`)
+- [x] Define explore module location (`appMap.features.explore`)
+- [x] Define shared components location (`appMap.shared` → `src/shared`)
+- [x] Define Firebase services location (`appMap.firebase` → `src/firebase`)
+- [x] Define design system location (`appMap.design` → `src/design`)
 
 ---
 
 ## 5. Design System
 
-- [ ] Create `/src/design/colors.ts`
-- [ ] Create `/src/design/typography.ts`
-- [ ] Create `/src/design/spacing.ts`
-- [ ] Create `/src/design/radius.ts`
-- [ ] Create `/src/design/shadows.ts`
-- [ ] Create `/src/design/themes.ts`
-- [ ] Create `/src/design/tokens.ts`
-- [ ] Create `/src/design/index.ts`
-- [ ] Define warm off-white background
-- [ ] Define ink/near-black text
-- [ ] Define muted text
-- [ ] Define subtle line/border colors
-- [ ] Define primary accent
-- [ ] Define typography variants
-- [ ] Define spacing scale
-- [ ] Define radius scale
-- [ ] Confirm no hardcoded colors
-- [ ] Confirm no random spacing values
-- [ ] Confirm light mode support
-- [ ] Confirm dark mode readiness
-- [ ] Document design system in `/src/docs/DESIGN_SYSTEM.md`
+- [x] Create `/src/design/colors.ts`
+- [x] Create `/src/design/typography.ts`
+- [x] Create `/src/design/spacing.ts`
+- [x] Create `/src/design/radius.ts`
+- [x] Create `/src/design/shadows.ts`
+- [x] Create `/src/design/themes.ts`
+- [x] Create `/src/design/tokens.ts`
+- [x] Create `/src/design/index.ts`
+- [x] Define warm off-white background (`colors.surface` / `surfaceElevated`)
+- [x] Define ink/near-black text (`textPrimary`)
+- [x] Define muted text (`textMuted`)
+- [x] Define subtle line/border colors (`borderSubtle`)
+- [x] Define primary accent (`accent`, `accentMuted`)
+- [x] Define typography variants (`typography.*`)
+- [x] Define spacing scale (`spacing.*`)
+- [x] Define radius scale (`radius.*`)
+- [x] Confirm no hardcoded colors (shell home + nav header use `tokens`)
+- [x] Confirm no random spacing values (shell home uses `tokens.spacing`)
+- [x] Confirm light mode support (`tokens` / `lightTheme`)
+- [x] Confirm dark mode readiness (`darkTheme` + `colorsDark` roles aligned)
+- [x] Document design system in `/src/docs/DESIGN_SYSTEM.md`
 
 ---
 
 ## 6. Shared Components
 
-- [ ] Create `/src/shared/components/AppScreen.tsx`
-- [ ] Create `/src/shared/components/AppText.tsx`
-- [ ] Create `/src/shared/components/AppButton.tsx`
+- [x] Create `/src/shared/components/AppScreen.tsx`
+- [x] Create `/src/shared/components/AppText.tsx`
+- [x] Create `/src/shared/components/AppButton.tsx`
 - [ ] Create `/src/shared/components/AppInput.tsx`
 - [ ] Create `/src/shared/components/AppCard.tsx`
 - [ ] Create `/src/shared/components/AppImage.tsx`
@@ -143,9 +143,9 @@ No major work should happen outside this checklist.
 - [ ] Create `/src/shared/components/AppHeader.tsx`
 - [ ] Create `/src/shared/components/EmptyState.tsx`
 - [ ] Create `/src/shared/components/LoadingState.tsx`
-- [ ] Create shared component barrel exports
-- [ ] Ensure all shared components use design tokens
-- [ ] Ensure shared components are platform-safe
+- [x] Create shared component barrel exports (`src/shared/components/index.ts`)
+- [ ] Ensure all shared components use design tokens (AppScreen, AppText, AppButton done; add others with §6)
+- [ ] Ensure shared components are platform-safe (slice above uses SafeAreaView / Pressable; verify rest when added)
 
 ---
 
