@@ -1,0 +1,21 @@
+# Dependencies and builds — keep out of Cursor indexing when present
+node_modules/
+**/node_modules/
+
+.expo/
+dist/
+web-build/
+coverage/
+*.log
+
+ios/Pods/
+ios/build/
+android/.gradle/
+android/build/
+android/app/build/
+
+.env
+.env.*
+!.env.example
+
+.DS_Store

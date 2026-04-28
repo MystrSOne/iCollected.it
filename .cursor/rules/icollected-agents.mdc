@@ -1,0 +1,16 @@
+---
+description: iCollected.it — read agent playbook and pick a lane before substantive work
+alwaysApply: true
+---
+
+# iCollected.it workspace discipline
+
+Before substantive implementation or multi-file refactors:
+
+1. Read `/prompt.md`, `/checklist.md`, and `/Agent.md`.
+2. Read `/agents/README.md`, pick a **primary** lane, add **supporting** lanes if the task crosses concerns.
+3. Read the relevant `/agents/<Role>.md` file(s) for that work.
+
+Do not override product direction in `prompt.md`. If the task is missing from `checklist.md`, add it. When work completes or scope changes, update `checklist.md`.
+
+Global bans from `Agent.md` still apply: no Firebase in screens, no scattered paywall checks, no hardcoded design tokens in UI, preserve `ScannerInput → ScannerEngine → ScannerResult → ItemDraft` separation from the Add Item flow.

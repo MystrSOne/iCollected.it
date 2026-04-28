@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Expo / React Native
+.expo/
+dist/
+web-build/
+
+# Env (keep example only if you add one)
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+
+# Native builds (when present)
+ios/Pods/
+android/.gradle/
+android/build/
+android/app/build/
